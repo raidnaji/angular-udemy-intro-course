@@ -1,0 +1,14 @@
+<button class="btn btn-primary"
+ (click)="onDetailsClick($event)"
+ >{{ buttonName }}</button>
+
+ <p *ngIf="displayDetails">Password = tuna</p>
+
+
+<p
+*ngFor="let date of buttonClicks; let i = index"
+[ngStyle]="{backgroundColor: getColor(i)}"
+[ngClass]="{'whiteText': i >= 4}">
+{{ date }}
+</p>
+
