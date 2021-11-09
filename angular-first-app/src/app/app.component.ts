@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './api.service'
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,15 @@ import { Component } from '@angular/core';
   `]
 })
 export class AppComponent {
+  data: any =[];
+
+  constructor (private user:ApiService) {
+
+    
+
+    this.user.getData().subscribe(data => {
+      console.warn(data)
+      this.data = data;
+    })
+  }
 }
